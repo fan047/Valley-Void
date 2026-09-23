@@ -2,6 +2,8 @@
 
 一款使用 Unity 制作的 3D 太空战斗原型。驾驶战机穿梭峡谷地形，以鼠标瞄准并摧毁敌方飞船。
 
+A 3D space-combat prototype made with Unity. Pilot a fighter through canyon terrain, aim with the mouse, and take down enemy ships.
+
 ## 功能
 
 - 玩家飞船的平面移动、俯仰与横滚反馈
@@ -9,6 +11,14 @@
 - 按住射击与粒子特效
 - 敌机碰撞检测、爆炸特效与销毁
 - 可编辑的飞船预制体、地形、材质与 Timeline 资源
+
+## Features
+
+- Player-fighter movement with pitch and roll feedback
+- Mouse-controlled crosshair and laser aiming
+- Hold-to-fire controls with particle effects
+- Enemy collision detection, explosion effects, and destruction
+- Editable ship prefabs, terrain, materials, and Timeline assets
 
 ## 操作
 
@@ -18,6 +28,14 @@
 | 瞄准 | 移动鼠标 |
 | 开火 | 按住鼠标左键 |
 
+## Controls
+
+| Action | Key / Input |
+| --- | --- |
+| Move | `W` `A` `S` `D` |
+| Aim | Move the mouse |
+| Fire | Hold the left mouse button |
+
 ## 运行项目
 
 1. 使用 **Unity 6000.4.3f1**（Unity 6）或兼容版本打开此项目。
@@ -26,6 +44,15 @@
 4. 在编辑器中按 Play 运行。
 
 `Main Level` 已配置为构建场景。项目使用 Universal Render Pipeline（URP）与 Unity Input System；首次打开时，Unity 会自动还原 Packages 中列出的依赖。
+
+## Run the Project
+
+1. Open the project with **Unity 6000.4.3f1** (Unity 6) or a compatible version.
+2. Wait for Unity to import the packages and assets.
+3. Open `Assets/Scenes/Main Level.unity`.
+4. Press Play in the editor.
+
+`Main Level` is configured as the build scene. The project uses the Universal Render Pipeline (URP) and Unity Input System; Unity restores the dependencies listed in `Packages` on first launch.
 
 ## 项目结构
 
@@ -39,9 +66,29 @@ Assets/
 └── Timelines/   # Timeline 资源
 ```
 
+## Project Structure
+
+```text
+Assets/
+├── Input/       # Input System action maps
+├── Prefabs/     # Ship, laser, and VFX prefabs
+├── Scenes/      # Main Level and Ships scenes
+├── Scripts/     # Player movement, weapon, enemy, and collision logic
+├── Terrain/     # Terrain and terrain-data assets
+└── Timelines/   # Timeline assets
+```
+
 ## 技术栈
 
 - Unity 6（6000.4.3f1）
+- C#
+- Universal Render Pipeline 17.4.0
+- Unity Input System 1.19.0
+- Unity Timeline 1.8.12
+
+## Tech Stack
+
+- Unity 6 (6000.4.3f1)
 - C#
 - Universal Render Pipeline 17.4.0
 - Unity Input System 1.19.0
@@ -51,3 +98,6 @@ Assets/
 
 仓库已包含适用于 Unity 的 `.gitignore`，不会提交 `Library`、构建产物和本地编辑器缓存。
 
+## Version Control
+
+The repository includes a Unity-ready `.gitignore`, which excludes `Library`, build output, and local editor caches.
