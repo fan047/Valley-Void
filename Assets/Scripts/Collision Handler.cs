@@ -5,6 +5,8 @@ using UnityEngine;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] GameObject destroyedVFX;
+    [SerializeField] Transform vfxPoint;
+
 
     void Start()
     {
@@ -17,7 +19,7 @@ public class CollisionHandler : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Instantiate(destroyedVFX, transform.position, Quaternion.identity);
+        Instantiate(destroyedVFX, vfxPoint.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
