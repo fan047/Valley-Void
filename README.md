@@ -1,103 +1,57 @@
-# Canyon Fighter
+# Valley Void
 
-一款使用 Unity 制作的 3D 太空战斗原型。驾驶战机穿梭峡谷地形，以鼠标瞄准并摧毁敌方飞船。
+Valley Void 是一款开发中的 3D 峡谷飞行射击游戏原型。玩家驾驶飞船在场景中移动，用鼠标瞄准并持续发射激光，击毁沿时间轴出现的敌机以获得分数。
 
-A 3D space-combat prototype made with Unity. Pilot a fighter through canyon terrain, aim with the mouse, and take down enemy ships.
+## 当前进度
 
-## 功能
+- 玩家飞船支持 `W` `A` `S` `D` 移动，以及随输入变化的俯仰和横滚反馈。
+- 鼠标控制准星与激光瞄准；按住鼠标左键持续开火。
+- 敌机具有命中判定、生命值、击毁特效和计分逻辑。
+- 敌机生成已接入对象池；场景中使用 Timeline 与 Signal 安排敌机波次。
+- 已有峡谷地形、天空盒、暂停菜单和分数显示。
 
-- 玩家飞船的平面移动、俯仰与横滚反馈
-- 鼠标十字准星与激光瞄准
-- 按住射击与粒子特效
-- 敌机碰撞检测、爆炸特效与销毁
-- 可编辑的飞船预制体、地形、材质与 Timeline 资源
-
-## Features
-
-- Player-fighter movement with pitch and roll feedback
-- Mouse-controlled crosshair and laser aiming
-- Hold-to-fire controls with particle effects
-- Enemy collision detection, explosion effects, and destruction
-- Editable ship prefabs, terrain, materials, and Timeline assets
+当前仍是 Unity 编辑器中的开发原型，仓库没有提供可直接运行的发行版。
 
 ## 操作
 
-| 操作 | 按键 / 输入 |
+| 操作 | 按键 |
 | --- | --- |
-| 移动 | `W` `A` `S` `D` |
+| 移动飞船 | `W` `A` `S` `D` |
 | 瞄准 | 移动鼠标 |
-| 开火 | 按住鼠标左键 |
+| 持续开火 | 按住鼠标左键 |
+| 暂停 / 继续 | `Esc` |
 
-## Controls
+## 技术栈
 
-| Action | Key / Input |
-| --- | --- |
-| Move | `W` `A` `S` `D` |
-| Aim | Move the mouse |
-| Fire | Hold the left mouse button |
+- **引擎与语言：** Unity 6（编辑器版本 `6000.4.3f1`）、C#。
+- **渲染：** Universal Render Pipeline（URP）`17.4.0`；项目还安装了 Shader Graph `17.4.0`。
+- **输入：** Unity Input System `1.19.0`。
+- **关卡编排：** Unity Timeline `1.8.12` 与 Signal。
+- **界面：** Unity UI（uGUI）`2.0.0`、TextMesh Pro。
+- **敌机复用：** Unity `ObjectPool<GameObject>`。
+- **地形工具：** Unity Terrain Tools `5.3.3`。
 
-## 运行项目
+依赖版本以 [`Packages/manifest.json`](Packages/manifest.json) 为准；项目同时安装了 HDRP 包，但当前图形设置引用的是 URP 资源。
 
-1. 使用 **Unity 6000.4.3f1**（Unity 6）或兼容版本打开此项目。
-2. 等待 Unity 完成包与资源导入。
-3. 打开 `Assets/Scenes/Main Level.unity`。
-4. 在编辑器中按 Play 运行。
+## 在 Unity 中运行
 
-`Main Level` 已配置为构建场景。项目使用 Universal Render Pipeline（URP）与 Unity Input System；首次打开时，Unity 会自动还原 Packages 中列出的依赖。
+1. 使用 Unity `6000.4.3f1` 打开仓库根目录，等待包和资源导入完成。
+2. 打开 [`Assets/Scenes/Main Level.unity`](Assets/Scenes/Main%20Level.unity)。
+3. 在编辑器中按 **Play**。
 
-## Run the Project
-
-1. Open the project with **Unity 6000.4.3f1** (Unity 6) or a compatible version.
-2. Wait for Unity to import the packages and assets.
-3. Open `Assets/Scenes/Main Level.unity`.
-4. Press Play in the editor.
-
-`Main Level` is configured as the build scene. The project uses the Universal Render Pipeline (URP) and Unity Input System; Unity restores the dependencies listed in `Packages` on first launch.
+`Main Level` 已列入构建场景。首次打开时，Unity 会根据 `Packages/manifest.json` 还原依赖。
 
 ## 项目结构
 
 ```text
 Assets/
-├── Input/       # Input System 操作映射
-├── Prefabs/     # 飞船、激光与特效预制体
-├── Scenes/      # Main Level 与 Ships 场景
-├── Scripts/     # 玩家移动、武器、敌人和碰撞逻辑
-├── Terrain/     # 地形及数据资源
-└── Timelines/   # Timeline 资源
+├── Input/               输入动作配置
+├── Prefabs/             玩家、敌机、激光与特效预制体
+├── Scenes/              主关卡与飞船展示场景
+├── Scripts/Player/      移动、武器、碰撞与暂停逻辑
+├── Scripts/Enemy/       敌机、命中判定、对象池与生成器
+├── Terrain/              地形资源
+└── Timelines/            主时间轴、敌机时间轴与 Signal
 ```
 
-## Project Structure
-
-```text
-Assets/
-├── Input/       # Input System action maps
-├── Prefabs/     # Ship, laser, and VFX prefabs
-├── Scenes/      # Main Level and Ships scenes
-├── Scripts/     # Player movement, weapon, enemy, and collision logic
-├── Terrain/     # Terrain and terrain-data assets
-└── Timelines/   # Timeline assets
-```
-
-## 技术栈
-
-- Unity 6（6000.4.3f1）
-- C#
-- Universal Render Pipeline 17.4.0
-- Unity Input System 1.19.0
-- Unity Timeline 1.8.12
-
-## Tech Stack
-
-- Unity 6 (6000.4.3f1)
-- C#
-- Universal Render Pipeline 17.4.0
-- Unity Input System 1.19.0
-- Unity Timeline 1.8.12
-
-## 版本控制
-
-仓库已包含适用于 Unity 的 `.gitignore`，不会提交 `Library`、构建产物和本地编辑器缓存。
-
-## Version Control
-
-The repository includes a Unity-ready `.gitignore`, which excludes `Library`, build output, and local editor caches.
+第三方导入资源位于 `Assets/Imported Assets/`；其随附的说明和许可文件保留在各自目录中。
