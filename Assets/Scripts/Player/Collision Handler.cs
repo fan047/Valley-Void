@@ -19,6 +19,7 @@ public class CollisionHandler : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("撞到了：" + other.name);
         Instantiate(destroyedVFX, vfxPoint.position, Quaternion.identity);
         Destroy(gameObject);
     }
