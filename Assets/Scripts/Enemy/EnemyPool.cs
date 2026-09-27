@@ -48,7 +48,14 @@ public class EnemyPool : MonoBehaviour
 
     private void OnDestroyEnemy(GameObject enemy)
     {
-        Destroy(enemy);
+        if (Application.isPlaying)
+        {
+            Destroy(enemy);
+        }
+        else
+        {
+            DestroyImmediate(enemy);
+        }
     }
 
     public GameObject Get()

@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Canyon Fighter.slnx",
+    "dotnet.defaultSolution": "Valley Void.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
