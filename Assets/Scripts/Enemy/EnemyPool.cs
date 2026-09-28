@@ -1,36 +1,50 @@
+using System;
+using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class EnemyPool : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [Serializable] public class EnemyPoolData
+    {
+        public EnemyType type;
+        public GameObject prefab;
+        public int defaultCapacity = 5;
+        public int maxSize = 20;
 
-    [SerializeField] private int defaultCapacity = 10;
-    [SerializeField] private int maxSize = 30;
-
-    private ObjectPool<GameObject> pool;
+        [HideInInspector] public ObjectPool<GameObject> pool;
+    }
+    
+    [SerializeField] private EnemyPoolData[] enemyPools;
+    
+    private Dictionary<EnemyType, EnemyPoolData> poolDictionary;
 
     private void Awake()
     {
-        pool = new ObjectPool<GameObject>(
-            CreateEnemy,
-            OnGetEnemy,
-            OnReleaseEnemy,
-            OnDestroyEnemy,
-            true,
-            defaultCapacity,
-            maxSize
-        );
+        poolDictionary = new Dictionary<EnemyType, EnemyPoolData>();
+
+        foreach(EnemyPoolData data in enemyPools)
+        {
+            data.pool = new ObjectPool<GameObject>(
+                () => CreateEnemy(data),
+                OnGetEnemy,
+                OnReleaseEnemy,
+                OnDestroyEnemy,
+                true,
+                data.defaultCapacity,
+                data.maxSize
+                );
+            
+            poolDictionary.Add(data.type, data);
+        }
     }
 
-    private GameObject CreateEnemy()
+    private GameObject CreateEnemy(EnemyPoolData data)
     {
-        GameObject enemy = Instantiate(enemyPrefab);
-
+        GameObject enemy = Instantiate(data.prefab);
         PooledEnemy pooledEnemy = enemy.GetComponent<PooledEnemy>();
-
-        pooledEnemy.SetPool(this);
-
+        pooledEnemy.SetPool(this, data.type);
         enemy.SetActive(false);
 
         return enemy;
@@ -58,13 +72,13 @@ public class EnemyPool : MonoBehaviour
         }
     }
 
-    public GameObject Get()
+    public GameObject Get(EnemyType type)
     {
-        return pool.Get();
+        return poolDictionary[type].pool.Get();
     }
 
-    public void Release(GameObject enemy)
+    public void Release(GameObject enemy, EnemyType type)
     {
-        pool.Release(enemy);
+        poolDictionary[type].pool.Release(enemy);
     }
 }

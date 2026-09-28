@@ -4,17 +4,19 @@ public class PooledEnemy : MonoBehaviour
 {
     private EnemyPool enemyPool;
 
-    public void SetPool(EnemyPool pool)
+    private EnemyType enemyType;
+
+    public void SetPool(EnemyPool pool, EnemyType type)
     {
         enemyPool = pool;
+        enemyType = type;
     }
 
     public void ReturnToPool()
     {
-        Debug.Log("ReturnToPool 被调用了");
         if (enemyPool != null)
         {
-            enemyPool.Release(gameObject);
+            enemyPool.Release(gameObject, enemyType);
         }
     }
 }

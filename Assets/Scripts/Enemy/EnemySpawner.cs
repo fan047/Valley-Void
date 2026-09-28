@@ -1,32 +1,42 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private EnemyPool enemyPool;
-    [SerializeField] private Transform[] spawnPoints;
-
-    public void SpawnAt(int index)
+    [Serializable] public class WaveData
     {
-        if (index < 0 || index >= spawnPoints.Length)
+        public Transform waveRoot;
+        public EnemyType enemyType;
+    }
+
+    [SerializeField] private EnemyPool enemyPool;
+    [SerializeField] private List<WaveData> waves;
+
+    public void SpawnWave(int index)
+    {
+        if (index < 0 || index >= waves.Count)
         {
-            Debug.LogWarning("SpawnPoint index 越界");
+            Debug.LogWarning("Wave index 越界：" + index);
             return;
         }
 
-        SpawnEnemy(spawnPoints[index]);
-    }
+        WaveData wave = waves[index];
 
-    public void SpawnAll()
-    {
-        foreach (Transform spawnPoint in spawnPoints)
+        if (wave.waveRoot == null)
         {
-            SpawnEnemy(spawnPoint);
+            return;
+        }
+
+        foreach (Transform spawnPoint in wave.waveRoot)
+        {
+            SpawnEnemy(spawnPoint, wave.enemyType);
         }
     }
 
-    private void SpawnEnemy(Transform spawnPoint)
+    private void SpawnEnemy(Transform spawnPoint, EnemyType enemyType)
     {
-        GameObject enemy = enemyPool.Get();
+        GameObject enemy = enemyPool.Get(enemyType);
 
         enemy.transform.SetPositionAndRotation(
             spawnPoint.position,
