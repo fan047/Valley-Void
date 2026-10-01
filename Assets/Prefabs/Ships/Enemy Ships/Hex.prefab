@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1799465173218224897}
   - component: {fileID: 782011146018406510}
   - component: {fileID: 2852322082959302594}
+  - component: {fileID: 1256166601477560545}
   m_Layer: 0
   m_Name: VFXPoint
   m_TagString: Untagged
@@ -112,6 +113,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1256166601477560545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3110670320661298344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99792022a68307469494163bc3a968a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyUI
+  markerPrefab: {fileID: 7861978370872011506, guid: 371f7dbfd4af6724ca809e23fda5c2ab, type: 3}
 --- !u!1001 &275391561219285852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,12 +287,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1828983030530950987, guid: ecfcffa463363994caf36fe0c51b8b23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3813651653799682910}
+    - targetCorrespondingSourceObject: {fileID: 1828983030530950987, guid: ecfcffa463363994caf36fe0c51b8b23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8389258134191621544}
     - targetCorrespondingSourceObject: {fileID: 3253478179798952835, guid: ecfcffa463363994caf36fe0c51b8b23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1349872918965381475}
     - targetCorrespondingSourceObject: {fileID: 3253478179798952835, guid: ecfcffa463363994caf36fe0c51b8b23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2304836290253830643}
+    - targetCorrespondingSourceObject: {fileID: 3253478179798952835, guid: ecfcffa463363994caf36fe0c51b8b23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2390518190962235819}
   m_SourcePrefab: {fileID: 100100000, guid: ecfcffa463363994caf36fe0c51b8b23, type: 3}
 --- !u!4 &1801727282393025146 stripped
 Transform:
@@ -302,6 +322,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6f755f30c77014b987723fc6acb300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PooledEnemy
+--- !u!320 &8389258134191621544
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315674412714031915}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: a2b262bfe77d5414b878efd7fe45a4cf, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8642481553128604981, guid: a2b262bfe77d5414b878efd7fe45a4cf, type: 2}
+    value: {fileID: 2390518190962235819}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &9043904236296247267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3253478179798952835, guid: ecfcffa463363994caf36fe0c51b8b23, type: 3}
@@ -340,3 +379,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c1d87a4c88f25419ec7aed31bdc3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHitbox
+--- !u!95 &2390518190962235819
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043904236296247267}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

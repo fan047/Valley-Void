@@ -3,29 +3,32 @@ using UnityEngine.InputSystem;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    [SerializeField] ParticleSystem[] lasers;
-    [SerializeField] RectTransform crosshair;
-    [SerializeField] Transform targetPoint;
-    [SerializeField] float targetDistance = 100f;
+    [SerializeField] private ParticleSystem[] lasers;
+    [SerializeField] private RectTransform crosshair;
+    [SerializeField] private Transform targetPoint;
+    [SerializeField] private float targetDistance = 100f;
+    [SerializeField] private GameStateManager gameStateManager;
 
+    private bool isFiring;
+    private Camera mainCamera;
 
-
-    bool isFiring = false;
-
-    Camera mainCamera;
-
-    void Start()
+    private void Awake()
     {
-        
+        if (gameStateManager == null)
+        {
+            Debug.LogError("PlayerWeapon 尚未指定 GameStateManager", this);
+        }
+    }
 
+    private void Start()
+    {
         mainCamera = Camera.main;
     }
 
-
-    void Update()
+    private void Update()
     {
-
-        if (PauseMenu.IsPaused)
+        if (gameStateManager == null ||
+            gameStateManager.CurrentState != GameState.Playing)
         {
             isFiring = false;
             ProcessFiring();
@@ -38,13 +41,14 @@ public class PlayerWeapon : MonoBehaviour
         AimLasers();
     }
 
-    void OnFire(InputValue value)
+    private void OnFire(InputValue value)
     {
-        isFiring = value.isPressed;
-        
+        isFiring = value.isPressed &&
+                   gameStateManager != null &&
+                   gameStateManager.CurrentState == GameState.Playing;
     }
 
-    void ProcessFiring()
+    private void ProcessFiring()
     {
         foreach (ParticleSystem laser in lasers)
         {
@@ -53,25 +57,24 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
-    void MoveCrosshair()
+    private void MoveCrosshair()
     {
         crosshair.position = Mouse.current.position.ReadValue();
     }
 
-    void MoveTargetPoint()
+    private void MoveTargetPoint()
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue();
         mousePosition.z = targetDistance;
         targetPoint.position = mainCamera.ScreenToWorldPoint(mousePosition);
     }
 
-    void AimLasers()
+    private void AimLasers()
     {
         foreach (ParticleSystem laser in lasers)
         {
-            Vector3 fireDirection = targetPoint.position - this.transform.position;
-            Quaternion rotationToTarget = Quaternion.LookRotation(fireDirection);
-            laser.transform.rotation = rotationToTarget;
+            Vector3 fireDirection = targetPoint.position - transform.position;
+            laser.transform.rotation = Quaternion.LookRotation(fireDirection);
         }
     }
 }

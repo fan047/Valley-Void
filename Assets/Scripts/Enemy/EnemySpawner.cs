@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Serializable] public class WaveData
+    [Serializable]
+    public class WaveData
     {
         public Transform waveRoot;
         public EnemyType enemyType;
@@ -13,25 +14,27 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private EnemyPool enemyPool;
     [SerializeField] private List<WaveData> waves;
 
-    public void SpawnWave(int index)
+    private int currentWaveIndex = 0;
+
+    public void SpawnNextWave()
     {
-        if (index < 0 || index >= waves.Count)
+        if (currentWaveIndex >= waves.Count)
         {
-            Debug.LogWarning("Wave index 越界：" + index);
+            Debug.LogWarning("所有波次已经生成完毕");
             return;
         }
 
-        WaveData wave = waves[index];
+        WaveData wave = waves[currentWaveIndex];
 
-        if (wave.waveRoot == null)
+        if (wave.waveRoot != null)
         {
-            return;
+            foreach (Transform spawnPoint in wave.waveRoot)
+            {
+                SpawnEnemy(spawnPoint, wave.enemyType);
+            }
         }
 
-        foreach (Transform spawnPoint in wave.waveRoot)
-        {
-            SpawnEnemy(spawnPoint, wave.enemyType);
-        }
+        currentWaveIndex++;
     }
 
     private void SpawnEnemy(Transform spawnPoint, EnemyType enemyType)

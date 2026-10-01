@@ -3,54 +3,57 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float controlSpeed = 10f;
-    [SerializeField] float xClampRange = 10f;
-    [SerializeField] float yClampRange = 10f;
-    
-    [SerializeField] float controlPitchFactor = 20f;
-    [SerializeField] float controlRollFactor = 30f;
-    [SerializeField] float rotationSpeed = 20f;
+    [SerializeField] private GameBalanceConfig balanceConfig;
 
-    Vector2 movement;
+    private Vector2 movement;
 
-    void Start()
+    private void Awake()
     {
-        
+        if (balanceConfig == null)
+        {
+            Debug.LogError("PlayerMovement 尚未指定 GameBalanceConfig", this);
+            enabled = false;
+        }
     }
 
-    void Update()
+    private void Update()
     {
         ProcessTranslation();
         ProcessRotation();
-
     }
-
 
     public void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
     }
 
-    void ProcessTranslation()
+    private void ProcessTranslation()
     {
-        float xOffset = movement.x * controlSpeed * Time.deltaTime;
+        PlayerBalanceData player = balanceConfig.player;
+
+        float xOffset = movement.x * player.controlSpeed * Time.deltaTime;
         float rawXPos = transform.localPosition.x + xOffset;
-        float clampedXPos = Mathf.Clamp(rawXPos, -xClampRange, xClampRange);
+        float clampedXPos = Mathf.Clamp(rawXPos, -player.xClampRange, player.xClampRange);
 
-
-        float yOffset = movement.y * controlSpeed * Time.deltaTime;
+        float yOffset = movement.y * player.controlSpeed * Time.deltaTime;
         float rawYPos = transform.localPosition.y + yOffset;
-        float clampedYPos = Mathf.Clamp(rawYPos, -.5f * yClampRange, yClampRange);
+        float clampedYPos = Mathf.Clamp(rawYPos, -0.5f * player.yClampRange, player.yClampRange);
 
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, 0f);
     }
 
-    void ProcessRotation()
+    private void ProcessRotation()
     {
-        float pitch = -controlPitchFactor * movement.y;
-        float roll = -controlRollFactor * movement.x;
+        PlayerBalanceData player = balanceConfig.player;
+
+        float pitch = -player.controlPitchFactor * movement.y;
+        float roll = -player.controlRollFactor * movement.x;
         Quaternion targetRotation = Quaternion.Euler(pitch, 0f, roll);
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
-        
+
+        transform.localRotation = Quaternion.Lerp(
+            transform.localRotation,
+            targetRotation,
+            player.rotationSpeed * Time.deltaTime
+        );
     }
 }

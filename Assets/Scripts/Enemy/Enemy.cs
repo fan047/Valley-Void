@@ -2,43 +2,58 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] GameObject destroyedVFX;
-    [SerializeField] Transform vfxPoint;
+    [SerializeField] private GameObject destroyedVFX;
+    [SerializeField] private Transform vfxPoint;
 
-    [SerializeField] int maxHitPoints = 3;
-    [SerializeField] int scoreValue = 10;
-
-    int currentHitPoints;
+    private int maxHitPoints;
+    private int scoreValue;
+    private int currentHitPoints;
     private bool isDead;
+    private bool isConfigured;
 
-    Scoreboard scoreboard;
-    PooledEnemy pooledEnemy;
+    private Scoreboard scoreboard;
+    private PooledEnemy pooledEnemy;
 
-    void Awake()
+    private void Awake()
     {
         scoreboard = FindAnyObjectByType<Scoreboard>();
         pooledEnemy = GetComponent<PooledEnemy>();
     }
 
-    void OnEnable()
+    private void OnEnable()
+    {
+        if (isConfigured)
+        {
+            ResetState();
+        }
+    }
+
+    public void ApplyBalance(EnemyBalanceData balance)
+    {
+        maxHitPoints = balance.maxHitPoints;
+        scoreValue = balance.scoreValue;
+        isConfigured = true;
+        ResetState();
+    }
+
+    private void ResetState()
     {
         currentHitPoints = maxHitPoints;
         isDead = false;
     }
 
-  
-
     public void ProcessHit()
     {
-        if (isDead)
+        if (!isConfigured || isDead)
+        {
             return;
+        }
 
         currentHitPoints--;
 
         if (currentHitPoints <= 0)
         {
             isDead = true;
-
             scoreboard.IncreaseScore(scoreValue);
 
             Instantiate(

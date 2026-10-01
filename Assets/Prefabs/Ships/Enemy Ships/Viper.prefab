@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4401736625685665899}
   - component: {fileID: 6653967184088202926}
   - component: {fileID: 6869123973374106909}
+  - component: {fileID: 8495041588761913857}
   - component: {fileID: 7943372870812589933}
   m_Layer: 0
   m_Name: VFXPoint
@@ -91,6 +92,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8495041588761913857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9082725452744272371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99792022a68307469494163bc3a968a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyUI
+  markerPrefab: {fileID: 7861978370872011506, guid: 371f7dbfd4af6724ca809e23fda5c2ab, type: 3}
 --- !u!135 &7943372870812589933
 SphereCollider:
   m_ObjectHideFlags: 0

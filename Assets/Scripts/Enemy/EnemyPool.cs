@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -17,6 +16,7 @@ public class EnemyPool : MonoBehaviour
     }
     
     [SerializeField] private EnemyPoolData[] enemyPools;
+    [SerializeField] private GameBalanceConfig balanceConfig;
     
     private Dictionary<EnemyType, EnemyPoolData> poolDictionary;
 
@@ -42,8 +42,22 @@ public class EnemyPool : MonoBehaviour
 
     private GameObject CreateEnemy(EnemyPoolData data)
     {
+        if (balanceConfig == null)
+        {
+            throw new InvalidOperationException("EnemyPool 未指定 GameBalanceConfig");
+        }
+
+        if (!balanceConfig.TryGetEnemyBalance(data.type, out EnemyBalanceData balance))
+        {
+            throw new InvalidOperationException($"配置中缺少 {data.type} 的敌人数据");
+        }
+
         GameObject enemy = Instantiate(data.prefab);
+
+        Enemy enemyComponent = enemy.GetComponent<Enemy>();
         PooledEnemy pooledEnemy = enemy.GetComponent<PooledEnemy>();
+
+        enemyComponent.ApplyBalance(balance);
         pooledEnemy.SetPool(this, data.type);
         enemy.SetActive(false);
 
