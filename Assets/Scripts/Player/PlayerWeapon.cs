@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerWeapon : MonoBehaviour
 {
     [SerializeField] private ParticleSystem[] lasers;
+    [SerializeField] private AudioSource firingAudioSource;
     [SerializeField] private RectTransform crosshair;
     [SerializeField] private Transform targetPoint;
     [SerializeField] private float targetDistance = 100f;
@@ -49,13 +50,24 @@ public class PlayerWeapon : MonoBehaviour
     }
 
     private void ProcessFiring()
+{
+    foreach (ParticleSystem laser in lasers)
     {
-        foreach (ParticleSystem laser in lasers)
-        {
-            var emissionModule = laser.emission;
-            emissionModule.enabled = isFiring;
-        }
+        var emissionModule = laser.emission;
+        emissionModule.enabled = isFiring;
     }
+
+    if (firingAudioSource == null) return;
+
+    if (isFiring && !firingAudioSource.isPlaying)
+    {
+        firingAudioSource.Play();
+    }
+    else if (!isFiring && firingAudioSource.isPlaying)
+    {
+        firingAudioSource.Stop();
+    }
+}
 
     private void MoveCrosshair()
     {
