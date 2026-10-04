@@ -120,6 +120,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2918733201343997100, guid: d343848ab21ba3145a70289831851997, type: 3}
+      propertyPath: balanceConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: e772cac37464c614f80516dbdeaea3da, type: 2}
     - target: {fileID: 3532182787821290759, guid: d343848ab21ba3145a70289831851997, type: 3}
       propertyPath: m_LocalPosition.y
       value: 9.97
