@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5"/></filter></defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M63 15L71 31L84 21L84 38L103 34L91 49L106 60L87 64L91 79L73 70L64 83L54 70L36 79L40 63L22 58L38 47L27 34L47 38L48 21L59 31Z" stroke="#46E4FC" stroke-width="13" opacity=".8" filter="url(#glow)"/>
+    <path d="M63 15L71 31L84 21L84 38L103 34L91 49L106 60L87 64L91 79L73 70L64 83L54 70L36 79L40 63L22 58L38 47L27 34L47 38L48 21L59 31Z" fill="#126078" fill-opacity=".64" stroke="#C9FCFF" stroke-width="3.5"/>
+    <circle cx="64" cy="51" r="13" fill="#FF9C42" opacity=".7" filter="url(#glow)"/>
+    <circle cx="64" cy="51" r="8" fill="#FFF9E6" stroke="#FFB55E" stroke-width="2"/>
+    <path d="M64 84V91M54 92H74L80 101L73 113H55L48 101Z" fill="#10475A" stroke="#D7FFFF" stroke-width="4"/>
+    <path d="M64 113V120" stroke="#6DE9FA" stroke-width="4"/>
+    <path d="M18 22L24 17M106 18L112 13M111 80L117 86" stroke="#FFB65C" stroke-width="3.5"/>
+  </g>
+
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1028" height="250" viewBox="0 0 1028 250">
+  <defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5"/></filter></defs>
+  <path d="M24 47H1004L1025 70V221L994 247H34L3 221V70Z" fill="#06111DE8" stroke="#3B91A8" stroke-width="2"/>
+  <path d="M47 60H981L1012 83V213L988 235H40L16 213V83Z" fill="#0A1D2BEA" stroke="#19465C" stroke-width="2"/>
+  <path d="M31 61H999" stroke="#65E7F6" stroke-width="7" opacity=".25" filter="url(#glow)"/>
+  <path d="M31 61H999M40 235H988" stroke="#5EDEE9" stroke-width="2" opacity=".72"/>
+  <path d="M24 86V210L42 227M1004 86V210L986 227" fill="none" stroke="#89D9E4" stroke-width="3" opacity=".6"/>
+  <path d="M71 49H259M283 49H471M495 49H683" stroke="#8DEEF3" stroke-width="4" opacity=".72"/>
+  <path d="M695 86H984M695 172H984" stroke="#3A8DA3" stroke-width="2"/>
+  <path d="M695 95L711 112V151L695 168M984 95L968 112V151L984 168" fill="none" stroke="#4CAFC2" stroke-width="2"/>
+  <path d="M716 104H962M716 160H962" stroke="#6EB2C0" stroke-width="1.5" opacity=".6"/>
+  <path d="M709 123H968M709 141H968" stroke="#29566A" stroke-width="2"/>
+  <path d="M671 199H975M675 206H968" stroke="#3988A0" stroke-width="2"/>
+  <path d="M675 206H968" stroke="#5DE4EE" stroke-width="6" opacity=".18" filter="url(#glow)"/>
+  <path d="M675 206H968" stroke="#5DE4EE" stroke-width="2" opacity=".7"/>
+  <path d="M57 216H641" stroke="#4CA1B2" stroke-width="2" opacity=".55"/>
+  <path d="M112 229H162M320 229H370M528 229H578" stroke="#D7FBFF" stroke-width="2" opacity=".52"/>
+  <path d="M687 45L704 31H765M958 31H993L1011 48" fill="none" stroke="#57CADD" stroke-width="2.5"/>
+  <path d="M783 31H941" stroke="#56BFD1" stroke-width="2" opacity=".62"/>
+  <path d="M698 225L707 217M959 217L968 225" stroke="#FFB75E" stroke-width="3" opacity=".8"/>
+
+</svg>

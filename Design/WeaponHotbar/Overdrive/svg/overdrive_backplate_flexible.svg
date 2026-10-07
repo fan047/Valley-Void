@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="192" viewBox="0 0 512 192">
+  <defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5"/></filter></defs>
+  <path d="M28 3H484L509 28V164L484 189H28L3 164V28Z" fill="#06111DE8" stroke="#4BAFC4" stroke-width="3"/>
+  <path d="M34 18H478M34 174H478" stroke="#5BE6F0" stroke-width="2" opacity=".78"/>
+  <path d="M17 54V31L31 17M495 54V31L481 17" fill="none" stroke="#A8E8EF" stroke-width="2"/>
+  <path d="M31 183H481" stroke="#6CF5FF" stroke-width="7" opacity=".28" filter="url(#glow)"/>
+  <path d="M31 183H481" stroke="#6CF5FF" stroke-width="2" opacity=".74"/>
+
+</svg>

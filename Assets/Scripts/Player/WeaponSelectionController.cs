@@ -12,6 +12,9 @@ public class WeaponSelectionController : MonoBehaviour
     {
         model = GetComponent<WeaponSelectionModel>();
 
+        // if (gameStateManager == null)
+        //     gameStateManager = FindFirstObjectByType<GameStateManager>();
+
         if (gameStateManager == null)
             Debug.LogError("WeaponSelectionController 未指定 GameStateManager", this);
     }

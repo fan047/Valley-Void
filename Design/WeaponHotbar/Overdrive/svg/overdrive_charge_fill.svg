@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="30" viewBox="0 0 256 30">
+  <defs></defs>
+  <path d="M8 4H247L252 15L247 26H8L3 15Z" fill="#0D3645" stroke="#5AD7E5" stroke-width="2"/>
+  <path d="M13 9H226L235 15L226 21H13Z" fill="#3FE3F3" opacity=".8"/>
+  <path d="M13 12H226" stroke="#E9FFFF" stroke-width="5" opacity=".9"/>
+  <path d="M221 7L242 15L221 23" fill="#FFB960" stroke="#FFD39A" stroke-width="2"/>
+  <path d="M26 9V21M56 9V21M86 9V21M116 9V21M146 9V21M176 9V21M206 9V21" stroke="#154A5C" stroke-width="3"/>
+
+</svg>

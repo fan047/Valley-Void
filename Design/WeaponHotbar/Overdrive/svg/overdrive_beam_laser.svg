@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5"/></filter></defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 11V83" stroke="#48DFF8" stroke-width="26" opacity=".85" filter="url(#glow)"/>
+    <path d="M64 11V83" stroke="#4DDDF2" stroke-width="16"/>
+    <path d="M64 8V81" stroke="#FFFFFF" stroke-width="6"/>
+    <path d="M52 18H76M46 42H53M75 42H82M45 65H52M76 65H83" stroke="#A8F7FF" stroke-width="3"/>
+    <path d="M51 88H77L84 98L76 112H52L44 98Z" fill="#10475A" stroke="#D7FFFF" stroke-width="4"/>
+    <path d="M64 112V121" stroke="#69E9FA" stroke-width="4"/>
+  </g>
+
+</svg>
