@@ -143,6 +143,7 @@ MonoBehaviour:
     - {fileID: -3828110173746802784}
     - {fileID: -6100000000000000000}
     - {fileID: -2231510126959911517}
+    - {fileID: -6200000000000000000}
     - {fileID: 6500375455083178323}
     - {fileID: -8188310688382452075}
     - {fileID: -4599672640139270255}
@@ -157,21 +158,24 @@ MonoBehaviour:
     - {fileID: -6000000000000000003}
     - {fileID: -6100000000000000004}
     - {fileID: -6000000000000000004}
+    - {fileID: -6200000000000000001}
     - {fileID: -6100000000000000005}
     - {fileID: -6000000000000000005}
     - {fileID: -6100000000000000006}
     - {fileID: -6000000000000000006}
     - {fileID: -6100000000000000007}
+    - {fileID: -6200000000000000002}
     - {fileID: -6000000000000000007}
     - {fileID: -6100000000000000008}
-    - {fileID: -6100000000000000009}
+    - {fileID: -6200000000000000003}
     - {fileID: -6000000000000000008}
+    - {fileID: -6100000000000000009}
     - {fileID: -6100000000000000010}
     - {fileID: -6000000000000000009}
     - {fileID: -6100000000000000011}
     - {fileID: -6000000000000000010}
-    - {fileID: -6100000000000000012}
     - {fileID: -6000000000000000011}
+    - {fileID: -6100000000000000012}
     - {fileID: -6100000000000000013}
     - {fileID: -6000000000000000012}
     - {fileID: -6100000000000000014}
@@ -547,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus05
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 59
+  m_Time: 57.3
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -563,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus06
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 67
+  m_Time: 66.5
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -579,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus07
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 75
+  m_Time: 72.1
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -595,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus08
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 83
+  m_Time: 82.2
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -611,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus09
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 94.5
+  m_Time: 95.1
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -627,7 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus10
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 99.5
+  m_Time: 101.7
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -643,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus11
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 107
+  m_Time: 105.7
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -659,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus12
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 115
+  m_Time: 113.1
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -675,7 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus13
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 123
+  m_Time: 126
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -691,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus14
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 131.5
+  m_Time: 130.9
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -707,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus15
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 140.5
+  m_Time: 139.2
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -723,7 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus16
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 149.5
+  m_Time: 148.4
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -739,7 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus17
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 158.5
+  m_Time: 156.5
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -755,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus18
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 166
+  m_Time: 163.9
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
@@ -771,7 +775,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Spawn Bonus19
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 174.5
+  m_Time: 173.2
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
+--- !u!114 &-6200000000000000000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Spawn Below01
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
+  m_Time: 12.4
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
+--- !u!114 &-6200000000000000001
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Spawn Below02
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
+  m_Time: 63.4
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
+--- !u!114 &-6200000000000000002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Spawn Below03
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
+  m_Time: 84.4
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
+--- !u!114 &-6200000000000000003
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Spawn Below04
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
+  m_Time: 96.8
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 9103bb802dae5d146bd7d695a580bc74, type: 2}
