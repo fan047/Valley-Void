@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="150" viewBox="0 0 200 150"><defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8"/></filter></defs>
+  <path d="M100 12V37M46 27L61 47M154 27L139 47M25 73H51M175 73H149" stroke="#FBCB78" stroke-width="12" opacity=".5" filter="url(#glow)"/>
+  <path d="M100 12V37M46 27L61 47M154 27L139 47M25 73H51M175 73H149" stroke="#FFE0A4" stroke-width="3" stroke-linecap="round"/>
+  <path d="M100 37L108 59L132 60L114 74L120 97L100 84L80 97L86 74L68 60L92 59Z" fill="#F7BC64" stroke="#FFF4D7" stroke-width="3"/>
+  <path d="M24 100L74 113L94 136L58 125ZM176 100L126 113L106 136L142 125Z" fill="#12495C" stroke="#84EDF4" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M65 118H135" stroke="#F6C36D" stroke-width="3"/>
+</svg>

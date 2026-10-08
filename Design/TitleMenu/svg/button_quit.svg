@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="82" viewBox="0 0 400 82">
+    <rect x="2" y="2" width="396" height="78" rx="2" fill="#0C202B" stroke="#527582" stroke-width="2"/>
+    <rect x="2" y="2" width="5" height="78" fill="#658995"/>
+    <text x="41" y="54" fill="#A4BBC4" font-family="Bahnschrift, Segoe UI, sans-serif" font-size="31" font-weight="600" letter-spacing="5">QUIT</text>
+    <path d="M351 31 L364 41 L351 51" fill="none" stroke="#658995" stroke-width="3" stroke-linejoin="miter"/>
+  </svg>

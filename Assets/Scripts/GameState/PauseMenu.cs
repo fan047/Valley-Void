@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameStateManager gameStateManager;
-
+    
    
     private void OnEnable()
     {
@@ -54,6 +55,14 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         gameStateManager.ResumeGame();
+    }
+
+    public void ReturnToTitle()
+    {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene("Title Screen");
     }
 
         private void HandleStateChanged(GameState state)

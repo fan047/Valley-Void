@@ -4,16 +4,22 @@ using UnityEngine.InputSystem;
 public class PlayerWeapon : MonoBehaviour
 {
     [SerializeField] private ParticleSystem[] lasers;
+
     [SerializeField] private AudioSource firingAudioSource;
+    [SerializeField] private AudioSource beamAudioSource;
+
     [SerializeField] private RectTransform crosshair;
     [SerializeField] private Transform targetPoint;
     [SerializeField] private float targetDistance = 100f;
+
     [SerializeField] private GameStateManager gameStateManager;
+
     [SerializeField] private Transform beamMuzzle;
     [SerializeField] private LineRenderer beamLine;
     [SerializeField] private ParticleSystem beamMuzzleGlow;
     [SerializeField, Min(0.05f)] private float beamHitInterval = 0.25f;
     [SerializeField, Min(1f)] private float beamRange = 1000f;
+
     private float nextBeamHitTime;
 
     private bool isFiring;
@@ -109,6 +115,7 @@ public class PlayerWeapon : MonoBehaviour
 
         beamLine.enabled = showBeam;
         UpdateBeamMuzzleGlow(showBeam);
+        UpdateBeamAudio(showBeam);
 
         if (!showBeam)
             return;
@@ -120,6 +127,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             beamLine.enabled = false;
             UpdateBeamMuzzleGlow(false);
+            UpdateBeamAudio(false);
             return;
         }
 
@@ -164,6 +172,16 @@ public class PlayerWeapon : MonoBehaviour
                 true,
                 ParticleSystemStopBehavior.StopEmittingAndClear);
         }
+    }
+
+    private void UpdateBeamAudio(bool active)
+    {
+        if (beamAudioSource == null) return;
+
+        if (active && !beamAudioSource.isPlaying)
+            beamAudioSource.Play();
+        else if (!active && beamAudioSource.isPlaying)
+            beamAudioSource.Stop();
     }
 
     private void MoveCrosshair()

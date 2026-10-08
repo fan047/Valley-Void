@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8"/></filter></defs>
+  <rect width="1920" height="1080" fill="#03101B" opacity=".76"/>
+  <ellipse cx="960" cy="510" rx="630" ry="420" fill="#0A5F70" opacity=".18" filter="url(#glow)"/>
+  <path d="M0 180H480M1440 180H1920M0 904H480M1440 904H1920" stroke="#66C9D4" stroke-width="2" opacity=".18"/>
+</svg>

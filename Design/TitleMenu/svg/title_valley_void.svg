@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="250" viewBox="0 0 1050 250">
+  <g font-family="Bahnschrift, Segoe UI, sans-serif">
+    <rect x="12" y="28" width="45" height="4" fill="#67DDED"/>
+    <text x="76" y="47" fill="#8ABAC7" font-size="39" font-weight="600" letter-spacing="16">VALLEY</text>
+    <text x="4" y="184" fill="#F1FAFC" font-size="157" font-weight="700" letter-spacing="11">VOID</text>
+  </g>
+  <path d="M10 222 H230 M245 222 H312 M325 222 H355" fill="none" stroke="#6ADBEA" stroke-width="3" opacity=".86"/>
+  <path d="M375 222 L391 214 L407 222 L391 230 Z" fill="#D8A95B"/>
+</svg>

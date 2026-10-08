@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="610" viewBox="0 0 900 610"><defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8"/></filter></defs>
+  <path d="M66 14H834L885 65V551L834 596H66L15 551V65Z" fill="#071622F2" stroke="#55AFC0" stroke-width="3"/>
+  <path d="M82 33H818L862 77V535L816 575H84L38 535V77Z" fill="none" stroke="#2D6174" stroke-width="2"/>
+  <path d="M95 37H805" stroke="#5DE8F4" stroke-width="14" opacity=".26" filter="url(#glow)"/>
+  <path d="M95 37H805" stroke="#75EAF2" stroke-width="3" opacity=".9"/>
+  <path d="M109 571H791" stroke="#62CED8" stroke-width="2" opacity=".7"/>
+  <path d="M68 85V534L91 556M832 85V534L809 556" fill="none" stroke="#6BCEDE" stroke-width="3" opacity=".7"/>
+  <path d="M70 83L91 62H176M830 83L809 62H724" fill="none" stroke="#C3F7FC" stroke-width="3" opacity=".85"/>
+  <path d="M190 62H333M567 62H710" stroke="#F0B962" stroke-width="3" opacity=".8"/>
+  <path d="M103 257H797M103 445H797" stroke="#285468" stroke-width="2"/>
+  <path d="M100 464L121 484V536M800 464L779 484V536" fill="none" stroke="#3D7890" stroke-width="2"/>
+  <path d="M132 550H270M630 550H768" stroke="#67D8E2" stroke-width="2" opacity=".5"/>
+  <path d="M107 274H169M731 274H793" stroke="#F3B968" stroke-width="3" opacity=".72"/>
+  <path d="M104 430H162M738 430H796" stroke="#F3B968" stroke-width="3" opacity=".55"/>
+  <path d="M88 354H116M784 354H812" stroke="#8AE4E8" stroke-width="4"/>
+  <path d="M80 98L104 72M820 72L844 98M81 525L106 548M819 548L844 525" stroke="#F6BD6D" stroke-width="3"/>
+</svg>

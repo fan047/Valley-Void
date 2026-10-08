@@ -5,7 +5,8 @@ public enum GameState
 {
     Playing,
     Paused,
-    GameOver
+    GameOver,
+    Victory
 }
 
 public class GameStateManager : MonoBehaviour
@@ -28,8 +29,15 @@ public class GameStateManager : MonoBehaviour
 
     public void EndGame()
     {
-        if (CurrentState == GameState.GameOver) return;
+        if (CurrentState == GameState.GameOver ||
+            CurrentState == GameState.Victory) return;
         ChangeState(GameState.GameOver);
+    }
+
+    public void WinGame()
+    {
+        if (CurrentState != GameState.Playing) return;
+        ChangeState(GameState.Victory);
     }
 
     private void ChangeState(GameState newState)

@@ -943,6 +943,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 179.15
         value: {x: -655.42944, y: 118.5, z: 2321.957}
+        inSlope: {x: 127.65498, y: 20.96635, z: -9.103315}
+        outSlope: {x: 127.65498, y: 20.96635, z: -9.103315}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 195.2
+        value: {x: 1173.503, y: 421.5, z: 2067.5752}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -987,7 +996,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 179.15
+    m_StopTime: 195.2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -1469,6 +1478,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 179.15
         value: -655.42944
+        inSlope: 127.65498
+        outSlope: 127.65498
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 195.2
+        value: 1173.503
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1940,6 +1958,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 179.15
         value: 118.5
+        inSlope: 20.96635
+        outSlope: 20.96635
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 195.2
+        value: 421.5
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2420,6 +2447,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 179.15
         value: 2321.957
+        inSlope: -9.103315
+        outSlope: -9.103315
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 195.2
+        value: 2067.5752
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3840,7 +3876,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -8037544608495126039}
-    m_Duration: 196.01666666666668
+    m_Duration: 179.78757507024955
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5054589537603129045}
     m_EaseInDuration: 0

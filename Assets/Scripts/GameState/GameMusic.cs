@@ -6,6 +6,7 @@ public class GameMusic : MonoBehaviour
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private AudioClip playingMusic;
     [SerializeField] private AudioClip gameOverMusic;
+    [SerializeField] private AudioClip victoryMusic;
 
     private AudioSource musicSource;
 
@@ -18,7 +19,8 @@ public class GameMusic : MonoBehaviour
     {
         if (gameStateManager == null ||
             playingMusic == null ||
-            gameOverMusic == null)
+            gameOverMusic == null ||
+            victoryMusic == null)
         {
             Debug.LogError("GameMusic 缺少引用", this);
             enabled = false;
@@ -66,6 +68,14 @@ public class GameMusic : MonoBehaviour
         {
             musicSource.Stop();
             musicSource.clip = gameOverMusic;
+            musicSource.loop = false;
+            musicSource.Play();
+        }
+
+        if (state == GameState.Victory)
+        {
+            musicSource.Stop();
+            musicSource.clip = victoryMusic;
             musicSource.loop = false;
             musicSource.Play();
         }

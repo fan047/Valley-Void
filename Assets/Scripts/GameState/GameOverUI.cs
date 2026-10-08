@@ -6,11 +6,12 @@ public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject victoryPanel;
     [SerializeField] private RectTransform crosshair;
 
     private void OnEnable()
     {
-        if (gameStateManager == null || gameOverPanel == null)
+        if (gameStateManager == null || gameOverPanel == null || victoryPanel == null)
         {
             Debug.LogError("GameOverUI 缺少场景引用", this);
             enabled = false;
@@ -34,21 +35,27 @@ public class GameOverUI : MonoBehaviour
 
     private void HandleStateChanged(GameState state)
     {
+        bool gameEnded = state == GameState.GameOver ||
+                        state == GameState.Victory;
+
         if (crosshair != null)
-            crosshair.gameObject.SetActive(state != GameState.GameOver);
+            crosshair.gameObject.SetActive(!gameEnded);
 
         gameOverPanel.SetActive(false);
+        victoryPanel.SetActive(false);
 
         if (state == GameState.GameOver)
-            StartCoroutine(ShowPanelAfterDelay());
+            StartCoroutine(ShowPanelAfterDelay(gameOverPanel, state));
+        else if (state == GameState.Victory)
+            StartCoroutine(ShowPanelAfterDelay(victoryPanel, state));
     }
 
-    private IEnumerator ShowPanelAfterDelay()
+   private IEnumerator ShowPanelAfterDelay(GameObject panel, GameState expectedState)
     {
         yield return new WaitForSecondsRealtime(1f);
 
-        if (gameStateManager.CurrentState == GameState.GameOver)
-            gameOverPanel.SetActive(true);
+        if (gameStateManager.CurrentState == expectedState)
+            panel.SetActive(true);
     }
 
     public void RestartGame()
