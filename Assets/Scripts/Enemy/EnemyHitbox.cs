@@ -11,6 +11,10 @@ public class EnemyHitbox : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        enemy.ProcessHit();
+        ParticleDamageSource source = other.GetComponent<ParticleDamageSource>();
+        if (source == null || enemy == null)
+            return;
+
+        enemy.ProcessHit(source.Damage);
     }
 }

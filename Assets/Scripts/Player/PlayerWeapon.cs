@@ -10,15 +10,13 @@ public class PlayerWeapon : MonoBehaviour
 
     [SerializeField] private RectTransform crosshair;
     [SerializeField] private Transform targetPoint;
-    [SerializeField] private float targetDistance = 100f;
 
+    [SerializeField] private GameBalanceConfig balanceConfig;
     [SerializeField] private GameStateManager gameStateManager;
 
     [SerializeField] private Transform beamMuzzle;
     [SerializeField] private LineRenderer beamLine;
     [SerializeField] private ParticleSystem beamMuzzleGlow;
-    [SerializeField, Min(0.05f)] private float beamHitInterval = 0.25f;
-    [SerializeField, Min(1f)] private float beamRange = 1000f;
 
     private float nextBeamHitTime;
 
@@ -31,6 +29,13 @@ public class PlayerWeapon : MonoBehaviour
         if (gameStateManager == null)
         {
             Debug.LogError("PlayerWeapon 尚未指定 GameStateManager", this);
+        }
+
+        if (balanceConfig == null || balanceConfig.weapon == null)
+        {
+            Debug.LogError("PlayerWeapon 未指定武器平衡配置", this);
+            enabled = false;
+            return;
         }
 
         weaponSelectionModel = GetComponent<WeaponSelectionModel>();
@@ -132,13 +137,13 @@ public class PlayerWeapon : MonoBehaviour
         }
 
         Vector3 direction = toAim.normalized;
-        Vector3 end = start + direction * beamRange;
+        Vector3 end = start + direction * balanceConfig.weapon.beamRange;
 
         if (Physics.Raycast(
                 start,
                 direction,
                 out RaycastHit hit,
-                beamRange,
+                balanceConfig.weapon.beamRange,
                 Physics.DefaultRaycastLayers,
                 QueryTriggerInteraction.Ignore))
         {
@@ -148,8 +153,9 @@ public class PlayerWeapon : MonoBehaviour
 
             if (enemy != null && Time.time >= nextBeamHitTime)
             {
-                enemy.ProcessHit();
-                nextBeamHitTime = Time.time + Mathf.Max(0.05f, beamHitInterval);
+                enemy.ProcessHit(balanceConfig.weapon.beamDamage);
+                nextBeamHitTime =
+                Time.time + Mathf.Max(0.05f, balanceConfig.weapon.beamHitInterval);
             }
         }
 
@@ -192,7 +198,7 @@ public class PlayerWeapon : MonoBehaviour
     private void MoveTargetPoint()
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue();
-        mousePosition.z = targetDistance;
+        mousePosition.z = balanceConfig.weapon.targetDistance;
         targetPoint.position = mainCamera.ScreenToWorldPoint(mousePosition);
     }
 

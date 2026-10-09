@@ -5208,15 +5208,14 @@ MonoBehaviour:
   - {fileID: 5833744723981338622}
   - {fileID: 8791302580822408552}
   firingAudioSource: {fileID: 0}
+  beamAudioSource: {fileID: 0}
   crosshair: {fileID: 0}
   targetPoint: {fileID: 0}
-  targetDistance: 250
+  balanceConfig: {fileID: 0}
   gameStateManager: {fileID: 0}
   beamMuzzle: {fileID: 0}
   beamLine: {fileID: 0}
   beamMuzzleGlow: {fileID: 0}
-  beamHitInterval: 0.25
-  beamRange: 1000
 --- !u!114 &6925045152472435267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5383,7 +5382,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1559572578424268112, guid: f1e20ba06e3462e4e9141faa18335718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3977134882896043079}
   m_SourcePrefab: {fileID: 100100000, guid: f1e20ba06e3462e4e9141faa18335718, type: 3}
 --- !u!4 &1349455364976643301 stripped
 Transform:
@@ -5395,6 +5397,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1559572578424268112, guid: f1e20ba06e3462e4e9141faa18335718, type: 3}
   m_PrefabInstance: {fileID: 4994818635078607534}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3977134882896043079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5833744723981338622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4680816e0adbece4296f04eff7bd5782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleDamageSource
+  balanceConfig: {fileID: 11400000, guid: e772cac37464c614f80516dbdeaea3da, type: 2}
 --- !u!1001 &6070209250963662722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5512,7 +5527,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1559572578424268112, guid: f1e20ba06e3462e4e9141faa18335718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7504201149919060572}
   m_SourcePrefab: {fileID: 100100000, guid: f1e20ba06e3462e4e9141faa18335718, type: 3}
 --- !u!4 &4057565648983619187 stripped
 Transform:
@@ -5524,3 +5542,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1559572578424268112, guid: f1e20ba06e3462e4e9141faa18335718, type: 3}
   m_PrefabInstance: {fileID: 8044640463968262200}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7504201149919060572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791302580822408552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4680816e0adbece4296f04eff7bd5782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleDamageSource
+  balanceConfig: {fileID: 11400000, guid: e772cac37464c614f80516dbdeaea3da, type: 2}

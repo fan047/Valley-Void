@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         float yOffset = movement.y * player.controlSpeed * Time.deltaTime;
         float rawYPos = transform.localPosition.y + yOffset;
-        float clampedYPos = Mathf.Clamp(rawYPos, -0.5f * player.yClampRange, player.yClampRange);
+        float clampedYPos = Mathf.Clamp(rawYPos, -player.lowerYClampFactor * player.yClampRange, player.yClampRange);
 
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, 0f);
     }

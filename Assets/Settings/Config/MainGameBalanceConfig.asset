@@ -16,6 +16,7 @@ MonoBehaviour:
     controlSpeed: 50
     xClampRange: 30
     yClampRange: 20
+    lowerYClampFactor: 0.6
     controlPitchFactor: 15
     controlRollFactor: 18
     rotationSpeed: 10
@@ -35,3 +36,9 @@ MonoBehaviour:
   - type: 4
     maxHitPoints: 4
     scoreValue: 20
+  weapon:
+    dualLaserDamage: 1
+    beamDamage: 1
+    targetDistance: 250
+    beamRange: 1000
+    beamHitInterval: 0.08

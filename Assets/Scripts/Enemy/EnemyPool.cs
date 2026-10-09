@@ -22,10 +22,19 @@ public class EnemyPool : MonoBehaviour
 
     private void Awake()
     {
+        if (balanceConfig == null)
+            throw new InvalidOperationException("EnemyPool 未指定 GameBalanceConfig");
+
+        if (!balanceConfig.TryValidateEnemies(out string error))
+            throw new InvalidOperationException(error);
+
         poolDictionary = new Dictionary<EnemyType, EnemyPoolData>();
 
         foreach(EnemyPoolData data in enemyPools)
         {
+            if (!balanceConfig.TryGetEnemyBalance(data.type, out _))
+                throw new InvalidOperationException($"EnemyPool 的 {data.type} 缺少敌人数值配置");
+                
             data.pool = new ObjectPool<GameObject>(
                 () => CreateEnemy(data),
                 OnGetEnemy,

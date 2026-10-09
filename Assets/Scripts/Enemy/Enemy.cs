@@ -42,14 +42,15 @@ public class Enemy : MonoBehaviour
         isDead = false;
     }
 
-    public void ProcessHit()
+   public void ProcessHit(int damage)
     {
-        if (!isConfigured || isDead)
+        if (!isConfigured || isDead || damage <= 0)
         {
             return;
         }
 
-        currentHitPoints--;
+        currentHitPoints -= damage;
+
 
         if (currentHitPoints <= 0)
         {

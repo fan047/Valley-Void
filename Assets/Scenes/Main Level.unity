@@ -13888,6 +13888,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8909610022687858465}
     - target: {fileID: 8813925104403194706, guid: 5cc75358113ffdd4ab57be3f5ae49d4c, type: 3}
+      propertyPath: balanceConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: e772cac37464c614f80516dbdeaea3da, type: 2}
+    - target: {fileID: 8813925104403194706, guid: 5cc75358113ffdd4ab57be3f5ae49d4c, type: 3}
       propertyPath: beamMuzzleGlow
       value: 
       objectReference: {fileID: 907153711}
