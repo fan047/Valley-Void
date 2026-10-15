@@ -1,10 +1,10 @@
 # Valley Void
 
-**独立开发的 3D 峡谷飞行射击游戏 · 持续开发中**
+**独立开发的 3D 峡谷飞行射击游戏 · 已完成并开放试玩**
 
 驾驶飞船穿越峡谷，用鼠标瞄准并击毁沿关卡路线出现的敌机。游戏包含双武器切换、敌机波次、计分，以及开始、暂停、胜利和失败结算流程。
 
-**[在线试玩（itch.io）](https://fan047.itch.io/valley-void)** · [作品集介绍](https://myportfolio-bdo.pages.dev/#project)
+**[在线试玩（itch.io）](https://fan047.itch.io/valley-void)** · [完整演示视频（B 站）](https://www.bilibili.com/video/BV1i7Jk68E74/) · [作品集介绍](https://myportfolio-bdo.pages.dev/#project)
 
 > 在线试玩是当前发布的版本；仓库中的 Unity 项目可能包含尚未发布的改动。
 
@@ -42,7 +42,7 @@
 2. 打开 [`Assets/Scenes/Title Screen.unity`](Assets/Scenes/Title%20Screen.unity)，按 **Play**，点击“开始游戏”进入主关卡。
 3. 若要直接调试战斗场景，可打开 [`Assets/Scenes/Main Level.unity`](Assets/Scenes/Main%20Level.unity) 并按 **Play**。
 
-`Title Screen` 与 `Main Level` 均已加入构建场景。游戏目前仍在迭代；试玩页面与仓库源码的更新节奏可能不同。
+`Title Screen` 与 `Main Level` 均已加入构建场景。试玩页面与仓库源码的更新节奏可能不同。
 
 ## 项目目录
 
